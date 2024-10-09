@@ -11,5 +11,6 @@ Backs up openhab and influx databases and syncs them to a cloud storage provider
      - The `noatime`mount option disables the updating of access time for both files and directories so that reading a file does not update their access time (atime) which is useful for backups as it results in measurable performance gains
 5. Reboot the system with `sudo reboot`. Alternatively, run `sudo mount -a`to apply the changes to `fstab` if you want to apply the changes without rebooting the system.
 6. Run `sudo crontab -e` and add `0 0 * * /opt/openhab-backup/sync.sh >> /var/log/openhab-backup.log  2>&1`
+
    This will create a cronjob that runs once a day and writes log output to a log file.
 
