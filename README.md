@@ -5,6 +5,7 @@ Backs up openhab, influx databases, and pivccu configurations and syncs them to 
 - influx backup uses `influxd backup -portable` to create a backup
 - pivccu backup uses `pivccu-backup` to create a backup
 
+## Setup
 1. Clone the repository to `/opt/`
 2. [Install rclone](https://rclone.org/install/), a command line tool to manage files on cloud storage
 3. [Conigure rclone](https://rclone.org/docs/) to sync backup files with your cloud storage provider of choice
