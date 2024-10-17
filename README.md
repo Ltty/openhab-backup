@@ -22,22 +22,22 @@ Backs up openhab, influx databases, and pivccu configurations and syncs them to 
 
    Backup all services
    ```
-   0 0 * * /opt/openhab-backup/sync.sh -a >> /var/log/openhab-backup.log  2>&1
+   0 0 * * * /opt/openhab-backup/sync.sh -a >> /var/log/openhab-backup.log  2>&1
    ```
    
    Backup openhab only
    ```
-   0 0 * * /opt/openhab-backup/sync.sh -o >> /var/log/openhab-backup.log  2>&1
+   0 0 * * * /opt/openhab-backup/sync.sh -o >> /var/log/openhab-backup.log  2>&1
    ```
 
    Backup influx only
    ```
-   0 0 * * /opt/openhab-backup/sync.sh -i >> /var/log/openhab-backup.log  2>&1
+   0 0 * * * /opt/openhab-backup/sync.sh -i >> /var/log/openhab-backup.log  2>&1
    ```
 
    Backup pivccu only
    ```
-   0 0 * * /opt/openhab-backup/sync.sh -p >> /var/log/openhab-backup.log  2>&1
+   0 0 * * * /opt/openhab-backup/sync.sh -p >> /var/log/openhab-backup.log  2>&1
    ```
 
 9. Run the following command to give all users execution rights to the script.
