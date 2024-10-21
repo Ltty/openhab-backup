@@ -22,7 +22,7 @@ if [[ $backupAll = true || $backupOpenhab = true ]]; then
   listOfDirs[openhab]=/bkup/openhab
   # Create openhab backup
   mkdir -p ${listOfDirs[openhab]}
-  openhab-cli backup ${listOfDirs[openhab]}/openhab-backup-$(date +"%d_%m_%y-%H_%M_%S").zip
+  /usr/bin/openhab-cli backup ${listOfDirs[openhab]}/openhab-backup-$(date +"%d_%m_%y-%H_%M_%S").zip
 fi
 
 if [[ $backupAll = true || $backupInflux = true ]]; then
@@ -30,16 +30,15 @@ if [[ $backupAll = true || $backupInflux = true ]]; then
   listOfDirs[influxdb]=/bkup/influxdb
   # Create influxdb backup
   mkdir -p ${listOfDirs[influxdb]}
-  influxd backup -portable ${listOfDirs[influxdb]}
+  /usr/bin/influxd backup -portable ${listOfDirs[influxdb]}
 fi
 
 if [[ $backupAll = true || $backupPivccu = true ]]; then
   echo  $(date +"%Y-%m-%d %H:%M:%S") creating pivccu backup in ${listOfDirs[pivccu]}
   listOfDirs[pivccu]=/bkup/pivccu
-
   # Create pivccu backup
   mkdir -p ${listOfDirs[pivccu]}
-  pivccu-backup ${listOfDirs[pivccu]}
+  /usr/sbin/pivccu-backup ${listOfDirs[pivccu]}
 fi
 
 for dir in "${!listOfDirs[@]}"
