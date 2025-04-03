@@ -45,7 +45,7 @@ for dir in "${!listOfDirs[@]}"
 do
    :
    echo  $(date +"%Y-%m-%d %H:%M:%S") backing up $dir - ${listOfDirs[$dir]}
-   rclone $rcloneOptions --config=$rcloneConfig sync ${listOfDirs[$dir]} gdrive:/backups/$dir
+   rclone $rcloneOptions --config=$rcloneConfig sync ${listOfDirs[$dir]} openhab:/openhab/$dir
 done
 
 
